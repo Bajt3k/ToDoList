@@ -7,8 +7,12 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    setTasks([...tasks, task]);
-    setTask("");
+    const trimmedTask = task.trim();
+
+    if (trimmedTask !== "") {
+      setTasks((prevTasks) => [...prevTasks, trimmedTask]);
+      setTask("");
+    }
   }
   return (
     <>
@@ -23,8 +27,8 @@ function App() {
         <button type="submit">ADD</button>
       </form>
       <ul>
-        {tasks.map((task) => (
-          <li>{task}</li>
+        {tasks.map((task, index) => (
+          <li key={`${task}-${index}`}>{task}</li>
         ))}
       </ul>
     </>
