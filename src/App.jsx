@@ -97,18 +97,21 @@ function App() {
                 </>
               ) : (
                 <>
-                  <span>{taskItem.text}</span>
+                  
                   <input
                     type="checkbox"
                     checked={taskItem.done}
                     onChange={() => toggleTaskDone(taskItem.id)}
                   />
+                  <span>{taskItem.text}</span>
+                  <div className="actions">
                   <button type="button" onClick={() => handleDeleteTask(taskItem.id)}>
                     Delete
                   </button>
                   <button type="button" onClick={() => handleEditTask(taskItem)}>
                     Edit
                   </button>
+                  </div>
                 </>
               )}
             </li>
