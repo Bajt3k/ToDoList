@@ -24,6 +24,9 @@ function App() {
       prevTasks.map((t) => (t.id === id ? { ...t, done: !t.done } : t)),
     );
   }
+  function handleDeleteTask(id) {
+    setTasks((prevTasks) => prevTasks.filter((t) => t.id !== id));
+  }
 
   return (
     <>
@@ -46,6 +49,10 @@ function App() {
               checked={task.done}
               onChange={() => toggleTaskDone(task.id)}
             />
+            <button onClick={() => handleDeleteTask(task.id)}>
+              Delete
+            </button>
+            
           </li>
         ))}
       </ul>
