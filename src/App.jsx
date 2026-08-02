@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
 import "./App.css";
 
 function App() {
@@ -69,55 +71,19 @@ function App() {
     <>
       <div className="App">
         <h1>ToDoList</h1>
-        <form onSubmit={handleSubmit} className="task-form">
-          <input
-            type="text"
-            placeholder="Type your task here..."
-            value={task}
-            onChange={(e) => setTask(e.target.value)}
-          />
-          <button type="submit">ADD</button>
-        </form>
-        <ul className="task-list">
-          {tasks.map((taskItem) => (
-            <li key={taskItem.id} className={taskItem.done ? "done" : ""}>
-              {editingId === taskItem.id ? (
-                <>
-                  <input
-                    className="edit-input"
-                    value={editText}
-                    onChange={(e) => setEditText(e.target.value)}
-                  />
-                  <button type="button" onClick={() => saveEditTask(taskItem.id)}>
-                    Save
-                  </button>
-                  <button type="button" onClick={cancelEditTask}>
-                    Cancel
-                  </button>
-                </>
-              ) : (
-                <>
-                  
-                  <input
-                    type="checkbox"
-                    checked={taskItem.done}
-                    onChange={() => toggleTaskDone(taskItem.id)}
-                  />
-                  <span>{taskItem.text}</span>
-                  <div className="actions">
-                  <button type="button" onClick={() => handleDeleteTask(taskItem.id)}>
-                    Delete
-                  </button>
-                  <button type="button" onClick={() => handleEditTask(taskItem)}>
-                    Edit
-                  </button>
-                  </div>
-                </>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
+        <TaskForm task={task} setTask={setTask} handleSubmit={handleSubmit} />
+        <TaskList
+          tasks={tasks}
+          toggleTaskDone={toggleTaskDone}
+          handleDeleteTask={handleDeleteTask}
+          handleEditTask={handleEditTask}
+          editingId={editingId}
+          editText={editText}
+          setEditText={setEditText}
+          saveEditTask={saveEditTask}
+          cancelEditTask={cancelEditTask}
+        />  
+    </div>
     </>
   );
 }
