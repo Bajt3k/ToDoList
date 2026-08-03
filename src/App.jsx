@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
+import TaskStats from "./components/TaskStats";
 import "./App.css";
 import logo from "./assets/logo.png";
 
@@ -93,7 +94,8 @@ function App() {
           saveEditTask={saveEditTask}
           cancelEditTask={cancelEditTask}
           setFilter={setFilter}
-        />  
+        />
+        <TaskStats tasks={tasks} /> 
     </div>
     </>
   );

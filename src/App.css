@@ -245,3 +245,67 @@ button:hover {
   background: #6366f1 !important;
   color: white !important;
 }
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 20px;
+
+  background: #f8fafc;
+
+  border-radius: 16px;
+
+  color: #374151;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow: inset 0 0 0 1px #e5e7eb;
+}
+
+
+.stats span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 12px;
+
+  border-radius: 999px;
+
+  background: white;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+
+/* Aktywne zadania */
+.stats span:first-child {
+  color: #6366f1;
+}
+
+
+/* Ukończone zadania */
+.stats span:last-child {
+  color: #10b981;
+}
+
+
+/* Responsywność */
+@media (max-width: 500px) {
+  .App {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stats span {
+    width: 100%;
+    justify-content: center;
+  }
