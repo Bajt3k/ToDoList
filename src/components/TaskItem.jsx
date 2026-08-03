@@ -1,3 +1,6 @@
+import { FaTrash, FaEdit, FaSave } from "react-icons/fa";
+import {IoClose} from "react-icons/io5";
+
 function TaskItem({ taskItem, editingId, editText, setEditText, toggleTaskDone, handleDeleteTask, handleEditTask, saveEditTask, cancelEditTask }) {
     return (
         <li key={taskItem.id} className={taskItem.done ? "done" : ""}>
@@ -9,10 +12,10 @@ function TaskItem({ taskItem, editingId, editText, setEditText, toggleTaskDone, 
                 onChange={(e) => setEditText(e.target.value)}
               />
               <button type="button" onClick={() => saveEditTask(taskItem.id)}>
-                Save
+                <FaSave />
               </button>
               <button type="button" onClick={cancelEditTask}>
-                Cancel
+                <IoClose />
               </button>
             </>
           ) : (
@@ -28,10 +31,10 @@ function TaskItem({ taskItem, editingId, editText, setEditText, toggleTaskDone, 
                   type="button"
                   onClick={() => handleDeleteTask(taskItem.id)}
                 >
-                  Delete
+                  <FaTrash />
                 </button>
                 <button type="button" onClick={() => handleEditTask(taskItem)}>
-                  Edit
+                    <FaEdit />
                 </button>
               </div>
             </>
