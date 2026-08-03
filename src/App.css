@@ -219,3 +219,29 @@ button:hover {
   display: flex;
   gap: 8px;
 }
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filters button {
+  background: #f3f4f6;
+  color: #374151;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  transition: .2s;
+}
+
+.filters button:hover {
+  background: #e5e7eb;
+}
+
+.filter-active {
+  background: #6366f1 !important;
+  color: white !important;
+}

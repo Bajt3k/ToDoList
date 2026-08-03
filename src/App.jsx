@@ -12,6 +12,15 @@ function App() {
   });
   const [editingId, setEditingId] = useState(null);
   const [editText, setEditText] = useState("");
+  const [filter, setFilter] = useState("all");
+  const FilteredTasks = tasks.filter((task) => {
+    if (filter === "active") {
+      return !task.done;
+    } else if (filter === "completed") {
+      return task.done;
+    }
+    return true;
+  });
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -74,7 +83,7 @@ function App() {
         <img src={logo} className="logo" alt="logo" />
         <TaskForm task={task} setTask={setTask} handleSubmit={handleSubmit} />
         <TaskList
-          tasks={tasks}
+          tasks={FilteredTasks}
           toggleTaskDone={toggleTaskDone}
           handleDeleteTask={handleDeleteTask}
           handleEditTask={handleEditTask}
@@ -83,6 +92,7 @@ function App() {
           setEditText={setEditText}
           saveEditTask={saveEditTask}
           cancelEditTask={cancelEditTask}
+          setFilter={setFilter}
         />  
     </div>
     </>
