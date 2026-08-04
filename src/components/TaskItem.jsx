@@ -11,10 +11,10 @@ function TaskItem({ taskItem, editingId, editText, setEditText, toggleTaskDone, 
                 value={editText}
                 onChange={(e) => setEditText(e.target.value)}
               />
-              <button type="button" onClick={() => saveEditTask(taskItem.id)}>
+              <button type="button" className="save-btn" onClick={() => saveEditTask(taskItem.id)}>
                 <FaSave />
               </button>
-              <button type="button" onClick={cancelEditTask}>
+              <button type="button" className="cancel-btn" onClick={cancelEditTask}>
                 <IoClose />
               </button>
             </>
@@ -29,11 +29,12 @@ function TaskItem({ taskItem, editingId, editText, setEditText, toggleTaskDone, 
               <div className="actions">
                 <button
                   type="button"
+                  className="delete-btn"
                   onClick={() => handleDeleteTask(taskItem.id)}
                 >
                   <FaTrash />
                 </button>
-                <button type="button" onClick={() => handleEditTask(taskItem)}>
+                <button type="button" className="edit-btn" onClick={() => handleEditTask(taskItem)}>
                     <FaEdit />
                 </button>
               </div>

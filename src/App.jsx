@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import TaskStats from "./components/TaskStats";
+import DarkModeToggle from "./components/DarkModeToggle";
 import "./App.css";
 import logo from "./assets/logo.png";
+
 
 function App() {
   const [task, setTask] = useState("");
@@ -22,10 +24,12 @@ function App() {
     }
     return true;
   });
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -80,7 +84,9 @@ function App() {
 
   return (
     <>
-      <div className="App">
+      
+      <div className={darkMode ? "App dark" : "App"}>
+        <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
         <img src={logo} className="logo" alt="logo" />
         <TaskForm task={task} setTask={setTask} handleSubmit={handleSubmit} />
         <TaskList
@@ -97,6 +103,7 @@ function App() {
         />
         <TaskStats tasks={tasks} /> 
     </div>
+      
     </>
   );
 }
