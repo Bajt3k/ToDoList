@@ -1,16 +1,74 @@
-# React + Vite
+📝 ToDo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern ToDo List application built with React and Vite.
+This project was created to practice React fundamentals, state management, component architecture, and browser storage.
 
-Currently, two official plugins are available:
+✨ Features
+➕ Add new tasks
+✏️ Edit existing tasks
+✅ Mark tasks as completed
+🗑️ Delete tasks
+🔍 Filter tasks (All / Active / Completed)
+📊 Task statistics
+🌙 Dark mode
+💾 Automatic saving with Local Storage
+📱 Responsive design
+🛠️ Technologies
+React
+JavaScript (ES6+)
+Vite
+CSS3
+Local Storage API
+🚀 Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Clone the repository:
 
-## React Compiler
+git clone https://github.com/Bajt3k/ToDoList.git
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Go to the project directory:
 
-## Expanding the ESLint configuration
+cd ToDoList
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install dependencies:
+
+npm install
+
+Run the development server:
+
+npm run dev
+📂 Project Structure
+src/
+│── components/
+│   ├── TaskForm.jsx
+│   ├── TaskItem.jsx
+│   ├── TaskList.jsx
+│   ├── TaskStats.jsx
+│   ├── FilterBar.jsx
+│   └── ThemeToggle.jsx
+│
+│── App.jsx
+│── App.css
+│── main.jsx
+🎯 What I Learned
+
+While building this project, I practiced:
+
+React components
+Props
+useState
+useEffect
+Event handling
+Conditional rendering
+Array methods (map, filter)
+Local Storage
+Responsive UI design
+Basic project structure in React
+📸 Preview
+
+<img width="788" height="830" alt="Taskly1" src="https://github.com/user-attachments/assets/b4de8359-0c74-47df-931c-e76a4db71122" />
+
+<img width="679" height="660" alt="Taskly2" src="https://github.com/user-attachments/assets/ed56d846-aedf-4302-9741-0b62a30ae1e1" />
+
+<img width="724" height="754" alt="Taskly3" src="https://github.com/user-attachments/assets/9626dfbf-18bb-4a6c-94d6-b812e3d81612" />
+
+Created as a React learning project.
